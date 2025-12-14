@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Cortada - Senior Systems Engineer</title>
+    <title>Alexander Cortada - Senior Systems & Infrastructure Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,26 +14,41 @@
         .skill-tag { transition: all 0.3s ease; }
         .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3); }
         .timeline-dot { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2); }
+        .experience-card { transition: all 0.3s ease; }
+        .experience-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
+        .section-divider { height: 3px; width: 80px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); margin: 0 auto; }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body class="gradient-bg text-white">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm py-4">
+    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm py-4 border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold gradient-text">Alexander Cortada</div>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#home" class="hover:text-blue-400">Home</a>
-                <a href="#skills" class="hover:text-blue-400">Skills</a>
-                <a href="#experience" class="hover:text-blue-400">Experience</a>
-                <a href="#contact" class="hover:text-blue-400">Contact</a>
+            <a href="#home" class="text-2xl font-bold gradient-text">Alexander Cortada</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </div>
-            <button class="md:hidden"><i class="fas fa-bars"></i></button>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm">
+                <i class="fas fa-paper-plane mr-2"></i>Contact
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-16 px-6">
         <div class="max-w-6xl mx-auto text-center">
+            <div class="floating mb-8">
+                <div class="inline-block p-4 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+                    <i class="fas fa-server text-4xl text-blue-400"></i>
+                </div>
+            </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Alexander Cortada</h1>
             <h2 class="text-2xl md:text-3xl text-blue-400 mb-8">Senior Systems & Infrastructure Engineer</h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
@@ -41,37 +56,48 @@
                 Expert in Active Directory, IAM, Microsoft 365, Azure Cloud Services, virtualization, SIEM, MDM, and disaster recovery.
             </p>
             <div class="flex flex-wrap justify-center gap-6 mb-12">
-                <a href="mailto:alexander.cortada@gmail.com" class="flex items-center gap-2 hover:text-blue-400">
+                <a href="mailto:alexander.cortada@gmail.com" class="flex items-center gap-2 hover:text-blue-400 transition">
                     <i class="fas fa-envelope"></i> alexander.cortada@gmail.com
                 </a>
-                <a href="tel:7864862506" class="flex items-center gap-2 hover:text-blue-400">
+                <a href="tel:7864862506" class="flex items-center gap-2 hover:text-blue-400 transition">
                     <i class="fas fa-phone"></i> 786.486.2506
                 </a>
                 <span class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt"></i> Bartow, FL 33830
+                    <i class="fas fa-map-marker-alt"></i> Lake Wales, FL 33830
                 </span>
             </div>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://linkedin.com/in/alexander-cortada" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg flex items-center gap-2">
+                <a href="https://linkedin.com/in/alexander-cortada" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/AlexCortada" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg flex items-center gap-2">
+                <a href="https://github.com/AlexCortada" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg flex items-center gap-2 transition">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="#resume" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 px-6 py-3 rounded-lg flex items-center gap-2">
+                <a href="Alexander-Cortada-Resume-20251212.pdf" download class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 px-6 py-3 rounded-lg flex items-center gap-2 transition">
                     <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+            <div class="mt-20">
+                <a href="#skills" class="inline-block animate-bounce">
+                    <i class="fas fa-chevron-down text-gray-500 text-2xl"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - ALL CATEGORIES -->
     <section id="skills" class="py-20 px-6 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Technical Expertise</h2>
+            <h2 class="text-4xl font-bold text-center mb-4">Technical Expertise</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                18+ years of hands-on experience across enterprise infrastructure technologies
+            </p>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
                 <!-- Cloud Platforms -->
-                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
                             <i class="fas fa-cloud text-blue-400 text-xl"></i>
@@ -79,109 +105,444 @@
                         <h3 class="text-xl font-semibold">Cloud Platforms</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">Microsoft Azure</span>
-                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">AWS EC2</span>
-                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">AWS Lightsail</span>
-                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">Azure VDI</span>
+                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1.5 rounded-full text-sm">Microsoft Azure</span>
+                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1.5 rounded-full text-sm">AWS EC2</span>
+                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1.5 rounded-full text-sm">AWS Lightsail</span>
+                        <span class="skill-tag bg-blue-900/30 text-blue-300 px-3 py-1.5 rounded-full text-sm">Azure VDI</span>
                     </div>
                 </div>
 
-                <!-- Identity & Access -->
-                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <!-- Identity & Access Management -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
                     <div class="flex items-center mb-4">
                         <div class="bg-green-900/30 p-3 rounded-lg mr-4">
                             <i class="fas fa-shield-alt text-green-400 text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold">Identity & Access</h3>
+                        <h3 class="text-xl font-semibold">Identity & Access Management</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1 rounded-full">Microsoft Entra ID</span>
-                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1 rounded-full">ADFS</span>
-                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1 rounded-full">SSO</span>
-                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1 rounded-full">MFA</span>
+                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1.5 rounded-full text-sm">Microsoft Entra ID (Azure AD)</span>
+                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1.5 rounded-full text-sm">ADFS</span>
+                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1.5 rounded-full text-sm">SSO</span>
+                        <span class="skill-tag bg-green-900/30 text-green-300 px-3 py-1.5 rounded-full text-sm">MFA</span>
                     </div>
                 </div>
 
-                <!-- More skill cards... Add more as needed -->
+                <!-- Operating Systems -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-desktop text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Operating Systems</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-full text-sm">Windows Server 2019+</span>
+                        <span class="skill-tag bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-full text-sm">Windows 10/11</span>
+                        <span class="skill-tag bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-full text-sm">Linux (Ubuntu, Debian, Red Hat)</span>
+                        <span class="skill-tag bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-full text-sm">macOS</span>
+                    </div>
+                </div>
+
+                <!-- Networking -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-network-wired text-red-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Networking</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-red-900/30 text-red-300 px-3 py-1.5 rounded-full text-sm">LAN/WAN</span>
+                        <span class="skill-tag bg-red-900/30 text-red-300 px-3 py-1.5 rounded-full text-sm">VPN</span>
+                        <span class="skill-tag bg-red-900/30 text-red-300 px-3 py-1.5 rounded-full text-sm">Palo Alto Firewalls</span>
+                        <span class="skill-tag bg-red-900/30 text-red-300 px-3 py-1.5 rounded-full text-sm">HPE Aruba</span>
+                        <span class="skill-tag bg-red-900/30 text-red-300 px-3 py-1.5 rounded-full text-sm">Juniper Switches (JUNOS)</span>
+                    </div>
+                </div>
+
+                <!-- Monitoring & ITSM -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-chart-line text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Monitoring & ITSM</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-yellow-900/30 text-yellow-300 px-3 py-1.5 rounded-full text-sm">Zabbix</span>
+                        <span class="skill-tag bg-yellow-900/30 text-yellow-300 px-3 py-1.5 rounded-full text-sm">ServiceNow</span>
+                        <span class="skill-tag bg-yellow-900/30 text-yellow-300 px-3 py-1.5 rounded-full text-sm">JIRA</span>
+                        <span class="skill-tag bg-yellow-900/30 text-yellow-300 px-3 py-1.5 rounded-full text-sm">BMC Footprints</span>
+                        <span class="skill-tag bg-yellow-900/30 text-yellow-300 px-3 py-1.5 rounded-full text-sm">Confluence</span>
+                    </div>
+                </div>
+
+                <!-- Virtualization -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-server text-pink-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Virtualization</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-pink-900/30 text-pink-300 px-3 py-1.5 rounded-full text-sm">VMware vSphere/VCenter</span>
+                        <span class="skill-tag bg-pink-900/30 text-pink-300 px-3 py-1.5 rounded-full text-sm">Proxmox</span>
+                        <span class="skill-tag bg-pink-900/30 text-pink-300 px-3 py-1.5 rounded-full text-sm">Hyper-V</span>
+                        <span class="skill-tag bg-pink-900/30 text-pink-300 px-3 py-1.5 rounded-full text-sm">Docker</span>
+                        <span class="skill-tag bg-pink-900/30 text-pink-300 px-3 py-1.5 rounded-full text-sm">Parallels RDS</span>
+                    </div>
+                </div>
+
+                <!-- Endpoint & Systems Management -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-indigo-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Endpoint & Systems Management</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-indigo-900/30 text-indigo-300 px-3 py-1.5 rounded-full text-sm">MECM/SCCM</span>
+                        <span class="skill-tag bg-indigo-900/30 text-indigo-300 px-3 py-1.5 rounded-full text-sm">Intune (MDM)</span>
+                        <span class="skill-tag bg-indigo-900/30 text-indigo-300 px-3 py-1.5 rounded-full text-sm">PDQ Deploy/Inventory</span>
+                        <span class="skill-tag bg-indigo-900/30 text-indigo-300 px-3 py-1.5 rounded-full text-sm">MDT</span>
+                        <span class="skill-tag bg-indigo-900/30 text-indigo-300 px-3 py-1.5 rounded-full text-sm">Group Policy Objects (GPO)</span>
+                    </div>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-cyan-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-lock text-cyan-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Security Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">AppLocker</span>
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">BitLocker</span>
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">Microsoft Defender</span>
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">Sophos Central</span>
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">SIEM</span>
+                        <span class="skill-tag bg-cyan-900/30 text-cyan-300 px-3 py-1.5 rounded-full text-sm">CJIS Standards Awareness</span>
+                    </div>
+                </div>
+
+                <!-- Scripting & Automation -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-terminal text-orange-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Scripting & Automation</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-orange-900/30 text-orange-300 px-3 py-1.5 rounded-full text-sm">PowerShell</span>
+                        <span class="skill-tag bg-orange-900/30 text-orange-300 px-3 py-1.5 rounded-full text-sm">Bash</span>
+                        <span class="skill-tag bg-orange-900/30 text-orange-300 px-3 py-1.5 rounded-full text-sm">Batch</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - FULL TIMELINE -->
     <section id="experience" class="py-20 px-6 bg-gray-800">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Professional Experience</h2>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4">Professional Experience</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                18-year journey through enterprise infrastructure roles with increasing responsibility
+            </p>
             
             <div class="relative">
                 <!-- Timeline line -->
-                <div class="absolute left-4 md:left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500"></div>
                 
                 <!-- Experience Item 1 -->
                 <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pr-12">
                     <div class="absolute left-[-46px] md:left-auto md:right-[-8px] w-4 h-4 bg-blue-500 rounded-full timeline-dot"></div>
-                    <div class="bg-gray-900 p-6 rounded-xl">
-                        <h3 class="text-2xl font-bold mb-2">Business Process Engineer II</h3>
-                        <p class="text-blue-400 mb-2">Amgen / Milestone • Tampa, FL</p>
-                        <p class="text-gray-400 text-sm mb-4">08/2025 – Present</p>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-400 mt-1"></i> Led enterprise-wide Windows 11 migration for 50,000+ devices</li>
-                            <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-400 mt-1"></i> Architected deployment rings using Microsoft Intune</li>
-                            <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-400 mt-1"></i> Managed SCCM to Intune transition at scale</li>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">Business Process Engineer II</h3>
+                                <p class="text-blue-400 text-lg">Amgen / Milestone</p>
+                            </div>
+                            <span class="bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm">Present</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Tampa, FL • 08/2025 – Present</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Led enterprise-wide Windows 11 migration for an environment of over 50,000 devices</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Architected and deployed deployment rings using Microsoft Intune feature update policies</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Served as escalation point for complex Windows 11 upgrade failures across large-scale estate</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed technical transition from SCCM to modern management model with Microsoft Intune at scale</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Automated routine tasks and generated fleet-wide reports using PowerShell scripting</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Add more experience items... -->
+                <!-- Experience Item 2 -->
+                <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pl-12 md:ml-auto">
+                    <div class="absolute left-[-46px] md:left-[-8px] w-4 h-4 bg-purple-500 rounded-full timeline-dot"></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">Systems Infrastructure Engineer</h3>
+                                <p class="text-blue-400 text-lg">W.S. Badcock Corporation</p>
+                            </div>
+                            <span class="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm">Current</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Bartow, FL • 01/2025 – Present</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Administered and migrated On-Premise Active Directory to Azure AD (Microsoft Entra ID)</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Provided technical administration for Microsoft Azure Cloud Services, including Azure VDI</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed and secured Microsoft 365 environment for thousands of users</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Served as SME for Mobile Device Management (MDM), managing 7,000+ endpoints</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Wrote and deployed custom PowerShell scripts and complex GPOs for automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pr-12">
+                    <div class="absolute left-[-46px] md:left-auto md:right-[-8px] w-4 h-4 bg-green-500 rounded-full timeline-dot"></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">Owner / Operator</h3>
+                                <p class="text-blue-400 text-lg">Acension L.L.C.</p>
+                            </div>
+                            <span class="bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm">Remote</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Mulberry, FL (Remote) • 09/2021 – 10/2023</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Spearheaded development and maintenance of client infrastructure systems for SMBs</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Administered core enterprise platforms including Active Directory, Microsoft 365, Azure</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Designed and implemented robust disaster recovery plans with regular testing</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Led troubleshooting and root cause analysis in 24/7 operational environments</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed full technology lifecycles including wireless APs, switches, servers, POS systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pl-12 md:ml-auto">
+                    <div class="absolute left-[-46px] md:left-[-8px] w-4 h-4 bg-yellow-500 rounded-full timeline-dot"></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <h3 class="text-2xl font-bold mb-1">T2 Support Engineer</h3>
+                        <p class="text-blue-400 text-lg mb-2">Compass MSP - Firmenich</p>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Lakeland, FL • 04/2020 – 09/2021</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed and resolved tickets through ServiceNow for timely issue resolution</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Administered MDT imaging servers and PDQ Deploy for software distribution</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Configured and supported Azure Active Directory with MFA implementation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 5 -->
+                <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pr-12">
+                    <div class="absolute left-[-46px] md:left-auto md:right-[-8px] w-4 h-4 bg-red-500 rounded-full timeline-dot"></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <h3 class="text-2xl font-bold mb-1">Systems Support Engineer</h3>
+                        <p class="text-blue-400 text-lg mb-2">Hays-Hillsborough County / Quala Industrial</p>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Tampa, FL • 04/2018 – 02/2019</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed Windows endpoints and deployed software packages via SCCM</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Troubleshot hardware and software issues for Windows 7, 8, and 10</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed VPN, wireless security, and mobile devices using AirWatch MDM</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 6 -->
+                <div class="relative mb-12 ml-12 md:ml-0 md:w-1/2 md:pl-12 md:ml-auto">
+                    <div class="absolute left-[-46px] md:left-[-8px] w-4 h-4 bg-cyan-500 rounded-full timeline-dot"></div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 experience-card">
+                        <h3 class="text-2xl font-bold mb-1">Systems Engineer</h3>
+                        <p class="text-blue-400 text-lg mb-2">Univision Communications Inc / HCL of America</p>
+                        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Tampa, FL / San Antonio, TX • 08/2012 – 03/2018</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Led 9-person team in projects and disaster recovery for broadcast TV network</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Managed network servers, VPN gateways, and security patches using SCCM</li>
+                            <li class="flex gap-3"><i class="fas fa-chevron-right text-blue-400 mt-1 flex-shrink-0"></i>Executed company-wide Office 365 upgrade including migration and troubleshooting</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4">Key Projects & Achievements</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="text-blue-400 text-3xl mb-4">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Windows 11 Enterprise Migration</h3>
+                    <p class="text-gray-400 mb-4">Led migration of 50,000+ devices to Windows 11</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm">Intune</span>
+                        <span class="bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm">PowerShell</span>
+                        <span class="bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full text-sm">Azure AD</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Reduced deployment time by 40%, improved security compliance by 95%</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="text-green-400 text-3xl mb-4">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Active Directory Cloud Migration</h3>
+                    <p class="text-gray-400 mb-4">Migrated multi-domain AD to Microsoft Entra ID</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm">Azure AD</span>
+                        <span class="bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm">AD Connect</span>
+                        <span class="bg-green-900/30 text-green-300 px-3 py-1 rounded-full text-sm">Group Policy</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Enabled hybrid identity management, reduced admin overhead by 30%</p>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 experience-card">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Modern Device Management</h3>
+                    <p class="text-gray-400 mb-4">Transitioned from SCCM to Intune for 7,000+ endpoints</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm">Intune</span>
+                        <span class="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm">MECM</span>
+                        <span class="bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full text-sm">Autopilot</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Streamlined device management, improved compliance reporting accuracy</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-gray-900">
+    <section id="contact" class="py-20 px-6 bg-gray-800">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
-            <p class="text-gray-400 mb-12">Open to discussing infrastructure solutions, cloud strategy, or new opportunities.</p>
+            <div class="section-divider mb-8"></div>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                Open to discussing enterprise infrastructure solutions, cloud strategy, or new opportunities.
+            </p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <a href="mailto:alexander.cortada@gmail.com" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
-                    <i class="fas fa-envelope text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">Email</h3>
-                    <p class="text-gray-400">alexander.cortada@gmail.com</p>
+                <a href="mailto:alexander.cortada@gmail.com" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition group">
+                    <div class="inline-block p-4 rounded-full bg-blue-900/30 group-hover:bg-blue-900/50 mb-4">
+                        <i class="fas fa-envelope text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Email</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300">alexander.cortada@gmail.com</p>
                 </a>
                 
-                <a href="tel:7864862506" class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
-                    <i class="fas fa-phone text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">Phone</h3>
-                    <p class="text-gray-400">786.486.2506</p>
+                <a href="tel:7864862506" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition group">
+                    <div class="inline-block p-4 rounded-full bg-green-900/30 group-hover:bg-green-900/50 mb-4">
+                        <i class="fas fa-phone text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Phone</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300">786.486.2506</p>
                 </a>
                 
-                <div class="bg-gray-800 p-6 rounded-xl">
-                    <i class="fas fa-map-marker-alt text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">Location</h3>
-                    <p class="text-gray-400">Bartow, FL 33830</p>
+                <div class="bg-gray-900 p-6 rounded-xl group">
+                    <div class="inline-block p-4 rounded-full bg-purple-900/30 group-hover:bg-purple-900/50 mb-4">
+                        <i class="fas fa-map-marker-alt text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Location</h3>
+                    <p class="text-gray-400 group-hover:text-gray-300">Lake Wales, FL 33830</p>
                 </div>
             </div>
             
-            <div class="flex justify-center gap-6">
-                <a href="https://linkedin.com/in/alexander-cortada" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg">
-                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <a href="https://linkedin.com/in/alexander-cortada" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg flex items-center justify-center gap-3 transition">
+                    <i class="fab fa-linkedin text-xl"></i>
+                    <span class="font-semibold">Connect on LinkedIn</span>
                 </a>
-                <a href="https://github.com/AlexCortada" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg">
-                    <i class="fab fa-github mr-2"></i> View GitHub
+                
+                <a href="https://github.com/AlexCortada" target="_blank" class="bg-gray-900 hover:bg-gray-800 px-8 py-4 rounded-lg flex items-center justify-center gap-3 transition border border-gray-700">
+                    <i class="fab fa-github text-xl"></i>
+                    <span class="font-semibold">View GitHub Profile</span>
                 </a>
+            </div>
+            
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700">
+                <h3 class="text-xl font-bold mb-4">Professional Summary</h3>
+                <p class="text-gray-300">
+                    Senior Systems and Infrastructure Engineer with over 18 years of experience ensuring the reliability, availability, 
+                    and security of enterprise-scale infrastructure. Proven expertise in administering Active Directory, IAM, Microsoft 365, 
+                    and Azure Cloud Services, with deep knowledge of virtualization, SIEM, MDM, and disaster recovery. 
+                    A proactive problem-solver skilled in root cause analysis, scripting automation, and implementing 
+                    security-compliant solutions in 24/7 operational environments.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-gray-800 text-center text-gray-400">
-        <p>© 2024 Alexander Cortada. All rights reserved.</p>
-        <p class="mt-2">Senior Systems & Infrastructure Engineer</p>
-        <p class="mt-1 text-sm">alexander.acension.pro</p>
+    <footer class="py-12 px-6 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold gradient-text mb-2">Alexander Cortada</h3>
+                    <p class="text-gray-400">Senior Systems & Infrastructure Engineer</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://linkedin.com/in/alexander-cortada" target="_blank" class="text-gray-400 hover:text-blue-400 text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/AlexCortada" target="_blank" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:alexander.cortada@gmail.com" class="text-gray-400 hover:text-red-400 text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">© 2024 Alexander Cortada. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm mt-1">alexander.acension.pro</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>18+ years of enterprise infrastructure excellence • Cloud • Security • Automation</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Smooth scrolling -->
+    <!-- Back to Top Button -->
+    <a href="#home" id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition opacity-0 invisible">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
     <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.remove('opacity-100', 'visible');
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -195,6 +556,22 @@
                     });
                 }
             });
+        });
+
+        // Add current year to footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElement = document.querySelector('footer p');
+            if (yearElement && yearElement.textContent.includes('2024')) {
+                yearElement.textContent = yearElement.textContent.replace('2024', new Date().getFullYear());
+            }
+        });
+
+        // Print resume on Ctrl+P
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
         });
     </script>
 </body>
