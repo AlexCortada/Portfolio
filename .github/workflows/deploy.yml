@@ -1,36 +1,22 @@
-name: Deploy to GitHub Pages
+# Create a deploy folder
+mkdir deploy
+cp index.html deploy/
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+# Create a simple package.json for GitHub Pages
+echo '{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "gh-pages -d deploy"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  },
+  "homepage": "https://alexander.acension.pro"
+}' > package.json
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+# Install only gh-pages
+npm install gh-pages --save-dev
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        cname: alexander.acension.pro
+# Deploy
+npm run deploy
